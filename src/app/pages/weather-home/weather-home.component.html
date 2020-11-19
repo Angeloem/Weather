@@ -11,21 +11,6 @@
     </div>
   </div>
   <div class="main-body">
-    <div class="upper-body">
-      <div class="basic-info">
-        <div>
-          <span class="temp-banner">18</span>
-          <span class="degree">°</span>
-        </div>
-      </div>
-      <div class="image-container"></div>
-    </div>
-    <div class="stats-tiles">
-      <div
-      *ngFor="let tile of weatherData">
-        <app-stats-tile [tile]="getRegionTiles(tile | async)"></app-stats-tile>
-      </div>
-
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

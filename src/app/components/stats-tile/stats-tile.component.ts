@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {WeatherData} from '../../interfaces/weather.interface';
 
+
 @Component({
   selector: 'app-stats-tile',
   templateUrl: './stats-tile.component.html',

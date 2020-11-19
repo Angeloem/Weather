@@ -1,0 +1,37 @@
+.container {
+  display: flex !important;
+  //flex-wrap: wrap;
+  max-width: 20vw;
+  margin: 10px;
+
+  .tile-container {
+    //flex-basis: 10vw;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 13vw;
+    padding: 10px 0 0;
+
+    .icon {
+      margin: 0 auto;
+      background: rgba(255, 255, 255, .1);
+      height: 60px;
+      width: 60px;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .value {
+      padding: 20px 10px;
+      font-size: 1.5em;
+    }
+
+    .banner {
+      padding: 35px 10px;
+    }
+  }
+}

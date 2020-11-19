@@ -1,11 +1,8 @@
-export interface WeatherInterface {
-  temp: number;
-  condition: string;
-  data: WeatherData[];
-}
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
 
 export interface WeatherData {
-  icon: any;
+  icon: IconDefinition;
   value: string;
   title: string;
   unit: string;

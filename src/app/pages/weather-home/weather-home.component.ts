@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WeatherHomeService} from '../../services/weather-home.service';
 import {Observable} from 'rxjs';
 import {Region, WeatherData} from '../../interfaces/weather.interface';
+import {faCloudSunRain, faCompress, faTint, faWind, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-weather-home',
@@ -12,16 +13,19 @@ export class WeatherHomeComponent implements OnInit {
   weatherData: Observable<any>[] | undefined;
   regions: any[] | undefined;
   currentRegion: string | undefined;
+  temp: number | undefined;
+  condition: string | undefined;
+  weatherIcon: IconDefinition | undefined;
 
   constructor(private weatherHomeService: WeatherHomeService) {
   }
 
   ngOnInit(): void {
+    this.weatherIcon = faCloudSunRain;
     this.regions = ['Dar es Salaam', 'Manyara', 'Mbeya'];
     this.currentRegion = this.regions[0];
     // mapping the observables into one observable array
     this.weatherData = this.regions.map((region) => this.weatherHomeService.getRegionWeather(region));
-    this.weatherData?.forEach((el) => el.subscribe(res => console.log(res)));
   }
 
   getRegionStats(regionStats: any): Region | undefined {
@@ -35,38 +39,38 @@ export class WeatherHomeComponent implements OnInit {
 
   regionChanged($event: any): void {
     this.currentRegion = $event;
-    console.log(this.currentRegion);
   }
 
   getRegionTiles(data: any): WeatherData[] {
     if (data) {
+      this.temp = data.main.temp;
+      this.condition = data.weather[0].main;
       let tileData: WeatherData[];
       if (data.name === this.currentRegion) {
-        console.log('yaaaaaaay', data);
         tileData = [
           {
-            icon: 'Icon',
+            icon: faWind,
             title: 'Wind',
-            value: data.wind,
+            value: data.wind.speed,
             unit: 'km/h',
-            foregroundColor: 'cyan',
-            badgeColor: 'magenta'
+            foregroundColor: '#b43957',
+            badgeColor: '#a52a44'
           },
           {
-            icon: 'Icon',
+            icon: faCompress,
             title: 'Pressure',
             value: data.main.pressure,
             unit: 'hpa',
-            foregroundColor: 'cyan',
-            badgeColor: 'magenta'
+            foregroundColor: '#a64c71',
+            badgeColor: '#923a5c'
           },
           {
-            icon: 'Icon',
+            icon: faTint,
             title: 'Humidity',
             value: data.main.humidity,
             unit: '%',
-            foregroundColor: 'cyan',
-            badgeColor: 'magenta'
+            foregroundColor: '#a64c71',
+            badgeColor: '#923a5c'
           },
         ];
         return tileData;
@@ -74,5 +78,9 @@ export class WeatherHomeComponent implements OnInit {
     }
 
     return [];
+  }
+
+  getRegion(data: any): boolean {
+    return data ? data.name === this.currentRegion : false;
   }
 }

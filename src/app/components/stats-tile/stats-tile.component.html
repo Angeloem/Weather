@@ -1,10 +1,14 @@
-<div class="container" [style.backgroundColor]="_tile.foregroundColor" *ngFor="let _tile of tile">
-  <div class="icon">{{ _tile.icon }}</div>
-  <div class="value">{{_tile.value}}{{_tile.unit}}</div>
-  <div
-    class="banner"
-    [style.backgroundColor]="_tile.badgeColor"
-  >
-    <div class="text">{{_tile.title}}</div>
+<div class="container">
+  <div class="tile-container" *ngFor="let _tile of tile" [style.backgroundColor]="_tile.foregroundColor">
+    <div class="icon">
+      <fa-icon style="font-size: 25px" [icon]="_tile.icon"></fa-icon>
+    </div>
+    <div class="value">{{_tile.value}}{{_tile.unit}}</div>
+    <div
+      class="banner"
+      [style.backgroundColor]="_tile.badgeColor"
+    >
+      <div class="text">{{_tile.title}}</div>
+    </div>
   </div>
 </div>

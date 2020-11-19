@@ -10,6 +10,8 @@ export class WeatherHomeService {
   }
 
   getRegionWeather(region: string): Observable<any>{
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${region}&appid=8e50c646468aecdc448cbacfcd3a3e79&units=metric`);
+    const apiKey = '8e50c646468aecdc448cbacfcd3a3e79';
+    const apiKey1 = '9a5876733642857220dba4985c00e84c';
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${region}&appid=${apiKey1}&units=metric`);
   }
 }
