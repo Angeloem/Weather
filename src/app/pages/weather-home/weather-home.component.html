@@ -1,8 +1,16 @@
 <div class="container">
   <div class="side-bar">
-    <div>
+    <div class="heading-title">
       Weather <br/>For All
     </div>
+    <div *ngFor="let _weatherData of weatherData">
+      <app-link-tile
+        [region]="getRegionStats(_weatherData | async)"
+        (regionChanged)="regionChanged($event)"
+      ></app-link-tile>
+    </div>
   </div>
-  <div class="main-body"></div>
+  <div class="main-body">
+    <div>{{currentRegion}}</div>
+  </div>
 </div>

@@ -12,3 +12,9 @@ export interface WeatherData {
   foregroundColor: string;
   badgeColor: string;
 }
+
+export interface Region {
+  name: string;
+  latitude: number;
+  longitude: number;
+}

@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Helvetica Neue LT Std 45 Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Helvetica Neue LT Std 45 Light'), url('app/fonts/HelveticaNeueLTStd Lt.woff') format('woff');
+}
+
+
+* {
+  font-family: "Helvetica Neue LT Std 45 Light", sans-serif;
+}

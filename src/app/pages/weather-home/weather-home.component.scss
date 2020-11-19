@@ -1,0 +1,18 @@
+.container {
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  .side-bar {
+    background: #402f4f;
+    height: 100%;
+    .heading-title {
+      font-size: 4em;
+      margin: 20px 0 25px;
+      padding: 30px;
+    }
+  }
+}

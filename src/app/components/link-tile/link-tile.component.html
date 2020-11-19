@@ -1,1 +1,4 @@
-<p>link-tile works!</p>
+<div class="link-body" *ngIf="region" (click)="changeRegion(region.name)">
+  <div>{{ region.name}}</div>
+  <div><span>lat: {{ region.latitude}}</span>&nbsp;<span>lon: {{region.longitude}}</span></div>
+</div>
