@@ -3,16 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherHomeComponent } from './weather-home/weather-home.component';
+import {pages} from './index';
+import {HttpClientModule} from '@angular/common/http';
+import { StatsTileComponent } from './components/stats-tile/stats-tile.component';
+import { LinkTileComponent } from './components/link-tile/link-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherHomeComponent
+    ...pages,
+    StatsTileComponent,
+    LinkTileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
