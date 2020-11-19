@@ -21,42 +21,7 @@
   }
 
   .main-body {
-    padding: 5em;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
     height: 100%;
-
-    .upper-body {
-      display: flex;
-      justify-content: space-between;
-
-      .basic-info {
-
-        .temp-container {
-          display: flex;
-          align-items: start;
-          justify-content: start;
-          .temp-banner {
-            font-size: 7em;
-          }
-
-          .degree {
-            font-size: 6em;
-            //align-self: flex-start;
-          }
-        }
-      }
-
-      .image-container {
-        fa-icon {
-          font-size: 7em;
-        }
-      }
-    }
-
-    .stats-tiles {
-      width: 100%;
-    }
   }
 }
+

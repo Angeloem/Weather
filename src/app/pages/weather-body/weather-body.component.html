@@ -1,1 +1,16 @@
-<p>weather-body works!</p>
+<div class="body-container">
+  <div class="upper-body">
+    <div class="basic-info">
+      <div class="temp-container">
+        <span class="temp-banner">{{ temp ? temp : '...'}}</span>
+        <span class="degree">°</span>
+      </div>
+      <div>{{ condition ? condition : '' }}</div>
+      <div>{{ currentRegion ? currentRegion : '' }}</div>
+    </div>
+    <div class="image-container">
+      <fa-icon [icon]="weatherIcon"></fa-icon>
+    </div>
+  </div>
+  <app-stats-tile [tile]="getRegionTiles(weatherInfo | async)"></app-stats-tile>
+</div>

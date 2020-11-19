@@ -1,0 +1,39 @@
+.body-container {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 5.0px 20px;
+
+  .upper-body {
+    display: flex;
+    justify-content: space-between;
+
+    .basic-info {
+
+      .temp-container {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+
+        .temp-banner {
+          font-size: 7em;
+        }
+
+        .degree {
+          font-size: 6em;
+          //align-self: flex-start;
+        }
+      }
+    }
+
+    .image-container {
+      padding: 50px;
+      fa-icon {
+        font-size: 7em;
+      }
+    }
+  }
+}
+

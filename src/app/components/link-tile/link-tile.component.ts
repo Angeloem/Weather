@@ -18,7 +18,6 @@ export class LinkTileComponent implements OnInit {
   }
 
   changeRegion(name: string): void | undefined {
-    console.log(name);
     return this.regionChanged?.emit(name);
   }
 }
