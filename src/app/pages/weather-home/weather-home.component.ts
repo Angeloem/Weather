@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WeatherHomeService} from '../../services/weather-home.service';
 import {Observable} from 'rxjs';
-import {Region} from '../../interfaces/weather.interface';
+import {Region, WeatherData} from '../../interfaces/weather.interface';
 
 @Component({
   selector: 'app-weather-home',
@@ -36,5 +36,43 @@ export class WeatherHomeComponent implements OnInit {
   regionChanged($event: any): void {
     this.currentRegion = $event;
     console.log(this.currentRegion);
+  }
+
+  getRegionTiles(data: any): WeatherData[] {
+    if (data) {
+      let tileData: WeatherData[];
+      if (data.name === this.currentRegion) {
+        console.log('yaaaaaaay', data);
+        tileData = [
+          {
+            icon: 'Icon',
+            title: 'Wind',
+            value: data.wind,
+            unit: 'km/h',
+            foregroundColor: 'cyan',
+            badgeColor: 'magenta'
+          },
+          {
+            icon: 'Icon',
+            title: 'Pressure',
+            value: data.main.pressure,
+            unit: 'hpa',
+            foregroundColor: 'cyan',
+            badgeColor: 'magenta'
+          },
+          {
+            icon: 'Icon',
+            title: 'Humidity',
+            value: data.main.humidity,
+            unit: '%',
+            foregroundColor: 'cyan',
+            badgeColor: 'magenta'
+          },
+        ];
+        return tileData;
+      }
+    }
+
+    return [];
   }
 }

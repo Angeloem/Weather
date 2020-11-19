@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WeatherData} from '../../interfaces/weather.interface';
 
 @Component({
   selector: 'app-stats-tile',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats-tile.component.scss']
 })
 export class StatsTileComponent implements OnInit {
+  @Input() tile: WeatherData[] | undefined;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  getStyles(color: string): any {
+    return {
+      background: color,
+    };
+  }
 }

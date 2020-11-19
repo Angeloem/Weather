@@ -15,4 +15,24 @@
       padding: 30px;
     }
   }
+
+  .main-body {
+    padding: 5em;
+
+    .upper-body {
+      display: flex;
+      justify-content: space-between;
+
+      .basic-info {
+
+        .temp-banner {
+          font-size: 7em;
+        }
+
+        .degree {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
 }
